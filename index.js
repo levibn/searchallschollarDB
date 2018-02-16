@@ -21,7 +21,7 @@ app.get('/beta', function (req, res) {
   $.ajax({
     url: 'https://api.elsevier.com/content/search/scidir?query=heart&count=2&apiKey=3e8c962f55e8745c45129995d58a4dd3&view=COMPLETE',
     headers: {
-      'X-ELS-APIKey':'3e8c962f55e8745c45129995d58a4dd3'
+      'X-ELS-APIKey':'3e8c962f55e8745c45129995d58a4dd3',
         'Content-Type':'application/json'
     },
     method: 'GET',
