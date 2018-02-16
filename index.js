@@ -17,11 +17,20 @@ app.get('/teste', function (req, res) {
   });
 })
 app.get('/beta', function (req, res) {
-  request('/teste', { json: true}, (err, r, body) => {
-    if (err) { return console.log('erro',err); }
-    //console.log('sucesso',body);
-    res.send(body);
+  res.send(`<html><head></head><body><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script>
+  $.ajax({
+    url: 'https://api.elsevier.com/content/search/scidir?query=heart&count=2&apiKey=3e8c962f55e8745c45129995d58a4dd3&view=COMPLETE',
+    headers: {
+      'X-ELS-APIKey':'3e8c962f55e8745c45129995d58a4dd3'
+        'Content-Type':'application/json'
+    },
+    method: 'GET',
+    dataType: 'json',
+    success: function(data){
+      console.log('succes: '+data);
+    }
   });
+  </script></body></html>`);
 })
 app.listen(port);
 
