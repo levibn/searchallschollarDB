@@ -17,8 +17,8 @@ app.get('/teste', function (req, res) {
   });
 })
 app.get('/alpha', function(req, res){
-  console.log(req.get('origin'));
-  res.send(req.get('origin'));
+  console.log(req.get('host'));
+  res.send(req.get('host'));
   })
 app.get('/beta', function (req, res) {
   res.send(`<html><head></head><body><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script>
