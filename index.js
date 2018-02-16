@@ -16,6 +16,9 @@ app.get('/teste', function (req, res) {
     res.send(body);
   });
 })
+app.get('/alpha', function(req, res){
+  console.log(req.headers.origin);
+  })
 app.get('/beta', function (req, res) {
   res.send(`<html><head></head><body><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script>
   $.ajax({
@@ -27,7 +30,8 @@ app.get('/beta', function (req, res) {
     method: 'GET',
     dataType: 'json',
     success: function(data){
-      console.log('succes: '+data);
+		$('body').html(JSON.stringify(data));
+      console.log('succes: ',data);
     }
   });
   </script></body></html>`);
