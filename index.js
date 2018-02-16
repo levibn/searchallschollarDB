@@ -12,7 +12,7 @@ app.get('/teste', function (req, res) {
   request('https://api.elsevier.com/content/search/scidir?'+ querystring.stringify(data), { json: true, headers: {'X-ELS-APIKey': '3e8c962f55e8745c45129995d58a4dd3'} }, (err, r, body) => {
     if (err) { return console.log('erro',err); }
     //console.log('sucesso',body);
-    res.send((req)+'<br/>'+JSON.stringify(res)+'<br/>'+body);
+    res.send((req)+'<br/>'+(res)+'<br/>'+body);
   });
 })
 app.listen(port);
